@@ -1,0 +1,5 @@
+<ul class="products__list-tags">
+  {% for tag in tags %}
+  <li><a href="{{ tag.get_absolute_url }}">{{ tag.title|lower }}</a></li>
+  {% endfor %}
+</ul>

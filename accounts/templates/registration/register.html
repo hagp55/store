@@ -1,0 +1,26 @@
+{% extends 'base_auth.html' %}
+
+{% block content %}
+<section class="accounts">
+  <div class="container">
+    <h1 class="accounts__title">Регистрация</h1>
+    <div class="accounts__container">
+      <form method="post" action="{% url 'register' %}" class="accounts__form">
+        {% csrf_token %}
+
+
+        <input class="accounts__input" type="text" name="username" placeholder="Имя" required="">
+        <input class="accounts__input" name="phone" placeholder="Телефон" required="">
+        <input class="accounts__input" type="email" name="email" placeholder="Электронная почта" required="">
+        <input class="accounts__input" type="password" name="password1" placeholder="Пароль" required="">
+        <input class="accounts__input" type="password" name="password2" placeholder="Подтверждение пароля" required="">
+        {{ form.errors }}
+        <button class="button accounts__form-button">Регистрация</button>
+      </form>
+      <div class="accounts__additional-links">
+        У вас уже есть аккаунт? <a href="{% url 'login' %}"> Войти</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

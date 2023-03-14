@@ -1,0 +1,11 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block content %}
+<section class="accounts">
+  <div class="container">
+    <h1 class="accounts__title">Ваша ссылка не корректна, залогиньтесь снова.</h1>
+    <a href="{% url 'login' %}">Залогиниться</a>
+  </div>
+</section>
+{% endblock %}

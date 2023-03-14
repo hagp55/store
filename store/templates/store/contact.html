@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Контакты {% endblock%}
+
+{% block content %}
+<section class="contacts">
+  <div class="container">
+    <div class="contacts__row">
+      <div class="contacts__column">
+        <h1>Контакты</h1>
+        <ul class="contacts__list">
+          <li>{{ address }}
+          </li>
+          <li><a href="tel:+{{ phone }}" class="">+{{ phone_preview }}</a></li>
+          <li><a href="mailto:{{ email }}">{{ email }}</a> </li>
+        </ul>
+        <div class="contacts__feedback">
+          <h3>Обратная связь</h3>
+          {% if messages %}
+          {% for message in messages %}
+          {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+          <div class="alert alert-danger">
+            <strong>{{ message }}</strong>
+            <!-- <button class="button-close" aria-label="Закрыть"></button> -->
+          </div>
+          {% else %}
+          <div class="alert alert-success">
+            <strong>{{ message }}</strong>
+            <!-- <button class="button-close" aria-label="Закрыть"></button> -->
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          <form method="post" class="contacts__form">
+            {% csrf_token %}
+            <input name="phone" required placeholder="Введите телефон">
+            <textarea name="message" required placeholder="Введите ваше сообщение" rows="30"></textarea>
+            <button class="button contacts__form-button">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <div class="contacts__map">
+        <iframe
+          src="{{ map }}"
+          width="100%" height="84%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

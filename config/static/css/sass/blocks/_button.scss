@@ -1,0 +1,35 @@
+@import '../base/variables';
+
+.button {
+    border-radius: $base-border-radius-button;
+    color: #000;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    min-width: 167px;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.contacts__form-button {
+    background: #fefefe;
+    padding: 18px 47px 14px;
+
+    &:hover {
+        background: $base-link-hover;
+    }
+}
+
+.accounts__form-button {
+    background: #BD6F74;
+    color: #fff;
+    font-size: 16px;
+    margin: 14px auto;
+    padding: 4px;
+
+    &:hover {
+        background: $base-link-hover;
+    }
+}

@@ -1,0 +1,18 @@
+<section class="slider slider__related-products ">
+    <div class="container">
+        <div class="slider__title">
+            <h1>Похожие товары</h1>
+        </div>
+        <div class="product-slider owl-carousel">
+            {% for product in products %}
+            <div class="slider__item">
+                <div class="slider__item-img">
+                    <a href="{{ product.get_absolute_url  }}">
+                        <img src="{{ product.imageURL }}" alt="{{ product.keywords }}">
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

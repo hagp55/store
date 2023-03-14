@@ -1,0 +1,24 @@
+{% for product in page_obj %}
+<div class="products__column">
+    <div class="products__item">
+        {% if product.label == 'n' %}
+        <div class="products__tag-label" style="background-color: #32A3A9;">new</div>
+        {% elif product.label == 's' %}
+        <div class="products__tag-label" style="background-color: #BD6F64;">sale</div>
+        {% elif product.label == 'b' %}
+        <div class="products__tag-label" style="background-color: #F2AFB6;">best</div>
+        {% endif %}
+        <div class="products__thumb">
+            <a href="{{ product.get_absolute_url }}">
+                <img src="{{ product.imageURL }}" alt="{{ product.keywords }}">
+            </a>
+        </div>
+        <div class="products__body">
+            <h4>{{ product.title }}</h4>
+            <div class="products__price">
+                {{ product.price }} р.
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

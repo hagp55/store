@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% block title %}{{ title }} {% endblock%}
+
+{% block content %}
+
+<section class="products products__second-page">
+  <div class="container">
+    <div class="products__list">
+
+      {% include 'store/include/_products.html' %}
+
+      {% if page_obj|length < 1 %} <div class="products__seach-empty">
+        <div class="search-empty__title">По вашему запросу ничего не найдено</div>
+        <div class="search-empty__desctiption">Попробуйте изменить формулировку или вернитесь на
+          <a href="{% url 'index' %}">главую страницу</a>
+        </div>
+    </div>
+    {% endif %}
+  </div>
+  </div>
+</section>
+{% include 'store/include/_paginator_search.html' %}
+{% endblock %}

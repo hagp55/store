@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load tags %}
+{% load cache %}
+
+{% block content %}
+
+{% include 'store/include/_slider_new_products.html' %}
+
+<section class="products reset-margin">
+  <div class="container">
+    <div class="products__title">
+      <h1>Все товары</h1>
+    </div>
+    {% cache 60480 tags_list %}
+      {% get_tags %}
+    {% endcache %}
+    <div id="product_list" class="products__list">
+      {% include 'store/include/_products.html' %}
+    </div>
+  </div>
+</section>
+{% include 'store/include/_paginator.html' %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base_auth.html' %}
+
+{% block content %}
+<section class="accounts">
+  <div class="container">
+    <h1 class="accounts__title">Войти с учетной записью Chlenomylo</h1>
+    <div class="accounts__container">
+      <form method="post" action="{% url 'login' %}" class="accounts__form">
+        {% csrf_token %}
+        {% comment %}
+        {{ form.as_p }}
+        {% endcomment %}
+        <input class="accounts__input" type="email" name="username" placeholder="Электронная почта" required="">
+        <input class="accounts__input" type="password" name="password" placeholder="Пароль" required="">
+        {{ form.errors }}
+        <button class="button accounts__form-button">Войти</button>
+      </form>
+      <div class="accounts__additional-links">
+        <a href="{% url 'password_reset' %}">Забыли пароль?</a> или
+        <a href="{% url 'register' %}">Зарегестрироваться</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

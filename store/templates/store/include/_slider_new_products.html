@@ -1,0 +1,21 @@
+{% load products %}
+{% get_new_product as products %}
+
+<section class="slider slider__news-products">
+  <div class="container">
+    <div class="slider__title">
+      <h1>Новые товары</h1>
+    </div>
+    <div class="product-slider owl-carousel">
+      {% for product in products %}
+      <div class="slider__item">
+        <div class="slider__item-img">
+          <a href="{{ product.get_absolute_url  }}">
+            <img src="{{ product.imageURL }}" alt="{{ product.keywords }}">
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

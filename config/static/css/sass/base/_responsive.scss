@@ -1,0 +1,169 @@
+.container {
+    margin: 0 auto;
+}
+
+@media (min-width: 380px) {
+    .container {
+        max-width: 360px;
+    }
+
+    .products {
+        &__list {
+            gap: 1rem;
+        }
+
+        &__column {
+            flex: 0 0 calc((100% / 2) - 0.5rem);
+        }
+    }
+
+    .product {
+        &__description {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .products {
+        &__list {
+            gap: 1rem;
+        }
+
+        &__column {
+            flex: 0 0 calc((100% / 2) - 0.5rem);
+        }
+    }
+}
+
+
+@media (min-width:767px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .slider__news-products {
+        margin-top: 80px;
+    }
+
+    .products {
+        &__list {
+            gap: 1.2rem;
+        }
+
+        &__column {
+            flex: 0 0 calc((100% / 3) - 0.8rem);
+        }
+    }
+
+    .product {
+        margin: 120px 0 20px;
+
+        &__row {
+            display: flex;
+            gap: 2rem;
+        }
+
+        &__images {
+            flex-basis: 40%;
+        }
+
+        &__body {
+            flex-basis: 55%;
+        }
+
+        &__description {
+            font-size: 20px;
+        }
+
+    }
+
+    .accounts {
+        &__container {
+            margin: 0 auto;
+            margin-top: 14px;
+            width: 350px;
+        }
+    }
+
+    .contacts {
+        margin-top: 120px;
+
+        &__row {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        &__column {
+            flex-basis: 40%;
+        }
+
+        &__map {
+            margin: 0 0 25px 0;
+            flex-basis: 60%;
+        }
+    }
+
+    .footer {
+        &__item {
+            font-size: 20px;
+        }
+
+        &__item span {
+            display: inline-block;
+        }
+    }
+}
+
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .products {
+        &__list {
+            gap: 1.4rem;
+        }
+
+        &__column {
+            flex: 0 0 calc((100% / 3) - 1rem);
+        }
+    }
+
+    .product {
+
+        &__row {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        &__images {
+            flex-basis: 40%;
+        }
+
+        &__body {
+            flex-basis: 45%;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .products {
+        &__list {
+            gap: 1.6rem;
+        }
+
+        &__column {
+            flex: 0 0 calc((100% / 4) - 1.2rem);
+        }
+    }
+}

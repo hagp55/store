@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ product.title }}{% endblock %}
+
+{% block content %}
+<section class="product">
+  <div class="container">
+    <div class="product__row">
+      <div class="product__images">
+        <img id="featured" src="{{ product.imageURL }}" alt="{{ product.keywords }}">
+
+        {% if image_gallery %}
+        <div id="slide-wrapper" class="product__carousel">
+          <!-- <img id="slideLeft" class="arrow" src="{% static 'icon-fonts/arrow-left.png' %}"> -->
+          <div id="slider" class="">
+            <img class="product__thumbnail" src="{{ product.imageURL }}" alt="{{ product.keywords }}">
+            {% for image in image_gallery %}
+            <img class="product__thumbnail" data-imgbigurl="{{ image.imageURL }}" src="{{ image.imageURL }}"
+              alt="{{ image.keywords }}">
+            {% endfor %}
+          </div>
+          <!-- <img id="slideRight" class="arrow" src="{% static 'icon-fonts/arrow-right.png' %}"> -->
+        </div>
+        {% endif %}
+
+
+      </div>
+      <div class="product__body">
+        <div class="product__title">
+          <h1>{{ product.title }}</h1>
+        </div>
+        <div class="product__price">
+          {{ product.price }}р.
+        </div>
+        <div class="product__description">
+          {{ product.description|linebreaks }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if products|length >= 4 %}
+{% include 'store/include/_slider_related_products.html' %}
+{% endif %}
+
+
+
+{% endblock %}

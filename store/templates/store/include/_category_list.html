@@ -1,0 +1,13 @@
+{% for category in categories %}
+<li>
+  <a class="header__link" href="{{ category.get_absolute_url }}">{{ category.title | upper }}</a>
+</li>
+{% endfor %}
+
+{% comment %}
+{% for category in categories %}
+<li class="nav-item">
+  <a class="nav-link" href="{{ category.get_absolute_url }}">{{ category.title | upper }}</a>
+</li>
+{% endfor %}
+{% endcomment %}

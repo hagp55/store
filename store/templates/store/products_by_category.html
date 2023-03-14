@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block title %}{{ title }} {% endblock%}
+
+{% block content %}
+<section class="products products__second-page">
+  <div class="container">
+    <div class="products__title">
+      <h1>{{ title }}</h1>
+    </div>
+    <div id="product_list" class="row products__list">
+      {% include 'store/include/_products.html' %}
+    </div>
+  </div>
+</section>
+{% include 'store/include/_paginator.html'%}
+{% endblock %}

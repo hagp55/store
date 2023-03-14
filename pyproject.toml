@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "soap-store"
+version = "0.1.0"
+description = ""
+authors = ["Aleksandr Smelik <suntrope55@gmail.com>"]
+readme = "README.md"
+packages = [{include = "soap_store"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.7"
+requests = "^2.28.2"
+pillow = "^9.4.0"
+mysqlclient = "^2.1.1"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+django-debug-toolbar = "^3.8.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,28 @@
+@import '../base/variables';
+
+.footer {
+    background-color: $base-header-footer;
+    height: 70px;
+    padding: 20px;
+
+    &__list {
+        display: flex;
+        justify-content: center;
+
+        & a {
+            color: #BD6F74;
+        }
+    }
+
+    &__item {
+        font-size: 30px;
+        padding: 14px;
+
+        & span {
+            display: none;
+            padding: 0 1px;
+            font-size: 22px;
+
+        }
+    }
+}

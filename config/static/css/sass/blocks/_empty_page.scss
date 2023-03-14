@@ -1,0 +1,19 @@
+@import '../base/variables';
+
+.products__seach-empty{
+    line-height: 1.4;
+    margin: 0 auto;
+    text-align: center;
+    .search-empty__title{
+        color: #ee6e73;
+        font-size: 26px;
+    }
+    .search-empty__desctiption{
+        font-size: 20px;
+        margin-top: 15px;
+    }
+    & a{
+        font-size: 23px;
+        color: $base-link-hover;
+    }
+}

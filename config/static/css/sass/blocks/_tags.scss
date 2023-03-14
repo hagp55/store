@@ -1,0 +1,21 @@
+@import '../base/variables';
+
+.products {
+    &__list-tags {
+        margin: -2px 0 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__list-tags li{
+        background-color: #fefefe;
+        border-radius: $base-radius-tag-label;
+        margin: 15px 8px 0 8px;
+        min-width: 50px;
+        padding: 5px 15px;
+        text-align: center;
+
+    }
+}

@@ -1,0 +1,36 @@
+{% if page_obj.has_other_pages %}
+<div class="pagintaion">
+  <ul class="pagintaion__row">
+    {% if page_obj.has_previous %}
+    <li class="">
+      <a href="{{ request.path }}?{{ search }}page={{ page_obj.previous_page_number }}" class="page-link prev">Назад</a>
+    </li>
+    {% else %}
+    <li class="">
+      <a href="#" class="page-link prev disabled">Назад</a>
+    </li>
+    {% endif %}
+
+    {% for page in page_obj.paginator.page_range %}
+    {% if page == page_obj.number %}
+    <li class="pagintaion__page-number pagintaion__page-number-active">
+      <a class="page-link" href="{{ request.path }}?{{ search }}page={{ page }}">{{ page }}</a>
+    </li>
+    {% elif page > page_obj.number|add:-3 and page < page_obj.number|add:3 %} <li class="pagintaion__page-number">
+      <a class="page-link" href="{{ request.path }}?{{ search }}page={{ page }}">{{ page }}</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+      <li class="">
+        <a href="{{ request.path }}?{{ search }}page={{ page_obj.next_page_number }}" class="page-link next">Далее</a>
+      </li>
+      {% else %}
+      <li class="">
+        <a href="#" class="page-link next disabled">Далее</a>
+      </li>
+      {% endif %}
+  </ul>
+</div>
+{% endif %}

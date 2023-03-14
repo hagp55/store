@@ -1,0 +1,38 @@
+@import '../base/variables';
+
+.pagintaion {
+    text-align: center;
+    margin: -15px 0 18px 0;
+
+    &__row {
+        display: inline-flex;
+        background-color: #fff;
+        border-radius: 25px;
+        font-size: 16px;
+
+        & li {
+            padding: 8px 12px;
+        }
+    }
+
+    &__page-number a {
+        display: inline-block;
+        color: #000;
+    }
+
+    &__page-number-active {
+        background-color: $base-link-hover;
+        border-radius: 5px;
+
+        & a {
+            color: #fefefe;
+        }
+    }
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #bac1c7;
+    font-weight: 300;
+}
