@@ -1,6 +1,5 @@
 from django.conf import settings
-from django.contrib.auth.tokens import \
-    default_token_generator as token_generator
+from django.contrib.auth.tokens import default_token_generator as token_generator
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
@@ -8,20 +7,20 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 
 
-def send_email_for_verify(request, user ):
+def send_email_for_verify(request, user):
     current_site = get_current_site(request)
     context = {
-        'user': user,
-        'domain': current_site.domain,
-        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-        'token': token_generator.make_token(user),
+        "user": user,
+        "domain": current_site.domain,
+        "uid": urlsafe_base64_encode(force_bytes(user.pk)),
+        "token": token_generator.make_token(user),
     }
     message = render_to_string(
-        'registration/verify_email.html',
+        "registration/verify_email.html",
         context=context,
     )
     email = EmailMessage(
-        'Veryfi email',
+        "Veryfi email",
         message,
         settings.EMAIL_HOST_USER,
         to=[user.email],

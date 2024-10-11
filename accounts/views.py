@@ -1,6 +1,5 @@
 from django.contrib.auth import authenticate, get_user_model, login
-from django.contrib.auth.tokens import \
-    default_token_generator as token_generator
+from django.contrib.auth.tokens import default_token_generator as token_generator
 from django.contrib.auth.views import LoginView
 from django.core.exceptions import ValidationError
 from django.shortcuts import redirect, render

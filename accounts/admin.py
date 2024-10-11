@@ -10,12 +10,12 @@ User = get_user_model()
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     model = User
-    list_display = ('username', 'email', 'phone')
+    list_display = ("username", "email", "phone")
     add_form = UserCreationForm
     form = UserChangeForm
     add_fieldsets = (
-            (
-            'Информация об пользователе',
+        (
+            "Информация об пользователе",
             {
                 "classes": ("wide",),
                 "fields": (
@@ -34,8 +34,8 @@ class CustomUserAdmin(UserAdmin):
     )
 
     fieldsets = (
-            (
-            'Информация об пользователе',
+        (
+            "Информация об пользователе",
             {
                 "classes": ("wide",),
                 "fields": (

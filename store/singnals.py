@@ -10,9 +10,7 @@ User = get_user_model()
 @receiver(post_save, sender=User)
 def create_customer(sender, instance, created, **kwargs):
     if created:
-        Customer.objects.create(
-            user=instance
-        )
+        Customer.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)

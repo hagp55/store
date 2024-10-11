@@ -2,17 +2,17 @@ from config.settings.base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-INSTALLED_APPS += ['debug_toolbar']
+INSTALLED_APPS += ["debug_toolbar"]
 
-MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
+MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     # {
     #     'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
